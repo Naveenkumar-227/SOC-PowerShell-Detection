@@ -22,7 +22,9 @@ This project demonstrates how to detect suspicious PowerShell activity using Mic
 - `detection-notes.txt`: Brief explanation of logic and output
 
 ## 📸 Screenshots
-![Sysmon PowerShell Log](screenshots/event1.png)
+![Sysmon PowerShell Log](screenshots/e![event 1](https://github.com/user![event 2](https://github.com/user-attachments/assets/9ba68066-30db-41ae-82b8-7b66c59151cf)
+-attachments/assets/e27c6cee-3c0b-4cbd-bc1b-6cf67830511e)
+vent1.png)
 
 ## ✅ Outcome
 Detected simulated malicious PowerShell command using Sysmon Event ID 1. Demonstrates basic detection engineering and Windows event log monitoring for blue team operations.
